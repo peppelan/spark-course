@@ -1,6 +1,7 @@
-To prepare the dev environment (Docker-based Spark installation):
-- install Docker
-- execute `docker run --rm -it --name sparkdev -p 4040:4040 gettyimages/spark:2.1.1-hadoop-2.7`
+To prepare the dev environment (Docker-based Spark installation), after installing Docker, run, from the top folder:
+```bash
+docker run --rm -it --name sparkdev -v `pwd`:/SparkCourse -p 4040:4040 gettyimages/spark:2.1.1-hadoop-2.7
+```
 
 For checking the correct installation (as suggested in the course), you can open a PySpark shell by running:
 `docker exec -it sparkdev /usr/spark-2.1.1/bin/pyspark`, where the following lines: 
