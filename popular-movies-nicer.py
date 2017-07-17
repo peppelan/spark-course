@@ -1,8 +1,9 @@
 from pyspark import SparkConf, SparkContext
+import codecs
 
 def loadMovieNames():
     movieNames = {}
-    with open("ml-100k/u.ITEM") as f:
+    with codecs.open("ml-100k/u.ITEM", "r", encoding='utf-8', errors='ignore') as f:
         for line in f:
             fields = line.split('|')
             movieNames[int(fields[0])] = fields[1]
